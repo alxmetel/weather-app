@@ -1,15 +1,10 @@
 import './App.less';
-import Navbar from './components/header/Navbar/Navbar';
+import WidgetContainer from './components/WidgetContainer/WidgetContainer';
 
 const App = () => {
   return (
     <div className="App">
-      <header>
-        <Navbar />
-      </header>
-      <main>
-
-      </main>
+      <WidgetContainer />
     </div>
   );
 }

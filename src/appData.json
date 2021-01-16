@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "id": 0,
+      "display_name": "Toronto",
+      "coordinates": {
+        "latitude": "43.7001",
+        "longitude": "-79.4163"
+      }
+    },
+    {
+      "id": 1,
+      "display_name": "Berlin",
+      "coordinates": {
+        "latitude": "52.5244",
+        "longitude": "13.4105"
+      }
+    },
+    {
+      "id": 2,
+      "display_name": "Sydney",
+      "coordinates": {
+        "latitude": "-33.8679",
+        "longitude": "151.2073"
+      }
+    }
+  ]
+}
