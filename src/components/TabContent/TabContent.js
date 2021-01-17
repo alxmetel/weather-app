@@ -1,14 +1,14 @@
 // Alternatively this component could be written as functional using hooks
 
 import React, { Component } from 'react';
-import './TabContentContainer.less';
-import appData from '../../../appData.json';
-import Loader from '../../shared/Loader/Loader';
-import DayContainer from '../DayContainer/DayContainer';
+import './TabContent.less';
+import appData from '../../appData.json';
+import Loader from '../Loader/Loader';
+import Day from '../Day/Day';
 
 const numOfFurtherDays = 4;
 
-class TabContentContainer extends Component {
+class TabContent extends Component {
 
   state = {
     forecastData: null,
@@ -21,17 +21,13 @@ class TabContentContainer extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.activeTab !== this.props.activeTab) {
-      this.setDataIsReady(false);
+      this.setState({
+        dataIsReady: false
+      });
       this.getData();
     }
   }
 
-
-  setDataIsReady = val => {
-    this.setState({
-      dataIsReady: val
-    });
-  }
 
   fetchWeatherData = cityData => {
     const cityLatitude = cityData.coordinates.latitude;
@@ -50,7 +46,7 @@ class TabContentContainer extends Component {
         });
       })
       .catch(error => {
-        console.log("Forecast data fetch error: ", error)
+        console.log("Weather data fetch error: ", error)
       })
   }
 
@@ -65,7 +61,7 @@ class TabContentContainer extends Component {
   renderFurtherDays = () => {
     return [...Array(numOfFurtherDays)].map((e, i) => {
       return (
-        <DayContainer
+        <Day
           type="furtherDay"
           data={this.state.forecastData.daily[i + 1]}
           key={i}
@@ -79,7 +75,7 @@ class TabContentContainer extends Component {
       return (
         <div className="tab-content-container">
           <div className="today-block">
-            <DayContainer
+            <Day
               type="today"
               data={this.state.forecastData.current}
             />
@@ -99,4 +95,4 @@ class TabContentContainer extends Component {
   }
 }
 
-export default TabContentContainer;
+export default TabContent;

@@ -1,9 +1,9 @@
 import React from 'react';
-import './TabBarContainer.less';
-import appData from '../../../appData.json';
+import './TabBar.less';
+import appData from '../../appData.json';
 import TabItem from '../TabItem/TabItem';
 
-const TabBarContainer = props => {
+const TabBar = props => {
   const { activeTab, setActiveTab } = props;
 
   const renderTabItems = () => {
@@ -27,4 +27,4 @@ const TabBarContainer = props => {
   )
 }
 
-export default TabBarContainer;
+export default TabBar;

@@ -1,9 +1,9 @@
 import React from 'react';
-import './DayContainer.less';
-import { getIcon } from '../../../utilities/iconIdentifier';
-import { formatDate } from '../../../utilities/utilityFunctions';
+import './Day.less';
+import { getIcon } from '../../utilities/iconIdentifier';
+import { formatDate } from '../../utilities/utilityFunctions';
 
-const DayContainer = props => {
+const Day = props => {
   const { type, data } = props;
 
   const isToday = type === 'today';
@@ -52,4 +52,4 @@ const DayContainer = props => {
   return renderDayBlock();
 }
 
-export default DayContainer;
+export default Day;

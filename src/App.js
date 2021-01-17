@@ -1,10 +1,10 @@
 import './App.less';
-import WidgetContainer from './components/WidgetContainer/WidgetContainer';
+import Main from './components/Main/Main';
 
 const App = () => {
   return (
     <div className="App">
-      <WidgetContainer />
+      <Main />
     </div>
   );
 }
