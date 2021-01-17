@@ -1,9 +1,10 @@
 import React from 'react';
+import './Loader.less';
 
 const Loader = () => {
   return (
-    <div className="loader">
-      Loading...
+    <div className="loader-container">
+      <div className="loader">Loading...</div>
     </div>
   )
 }

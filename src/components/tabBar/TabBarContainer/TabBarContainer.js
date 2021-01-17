@@ -20,7 +20,11 @@ const TabBarContainer = props => {
     })
   }
 
-  return renderTabItems();
+  return (
+    <div className="tab-bar-container">
+      {renderTabItems()}
+    </div>  
+  )
 }
 
 export default TabBarContainer;

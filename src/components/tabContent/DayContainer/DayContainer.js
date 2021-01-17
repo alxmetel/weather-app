@@ -4,9 +4,9 @@ import { getIcon } from '../../../utilities/iconIdentifier';
 import { formatDate } from '../../../utilities/utilityFunctions';
 
 const DayContainer = props => {
-  const { today, data } = props;
+  const { type, data } = props;
 
-  const isToday = today === 'true';
+  const isToday = type === 'today';
 
   const dataToDisplay = {
     day: isToday ? "Today" : formatDate(data.dt),
@@ -16,14 +16,36 @@ const DayContainer = props => {
     generalDescription: data.weather[0].main
   }
 
-  return (
-    <div className={`day-container ${isToday ? "today" : "further-day"}`}>
-      <div>{dataToDisplay.day}</div>
-      <img src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
-      <div>{dataToDisplay.temperature}</div>
-      <div>{dataToDisplay.description}</div>
-    </div>
-  )
+  const renderDayBlock = () => {
+    if (type === "today") {
+      return (
+        <div className='day-container today'>
+          <h2 className="day">{dataToDisplay.day}</h2>
+          <div className="wrapper">
+            <div className="icon-block">
+              <img className="icon" src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
+            </div>
+            <div className="text-block">
+              <div className="temperature">{dataToDisplay.temperature}&#176;</div>
+              <div className="description">{dataToDisplay.description}</div>
+            </div>
+          </div>
+        </div>
+      )
+    } else if (type === "furtherDay") {
+      return (
+        <div className='day-container further-day'>
+          <h2 className="day">{dataToDisplay.day}</h2>
+          <img className="icon" src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
+          <div className="temperature">{dataToDisplay.temperature}&#176;</div>
+        </div>
+      )
+    } else {
+      return null;
+    }
+  }
+  
+  return renderDayBlock();
 }
 
 export default DayContainer;

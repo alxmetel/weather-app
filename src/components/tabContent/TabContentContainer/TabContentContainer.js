@@ -64,7 +64,13 @@ class TabContentContainer extends Component {
 
   renderFurtherDays = () => {
     return [...Array(numOfFurtherDays)].map((e, i) => {
-      return <DayContainer today="false" data={this.state.forecastData.daily[i + 1]} key={i} />
+      return (
+        <DayContainer
+          type="furtherDay"
+          data={this.state.forecastData.daily[i + 1]}
+          key={i}
+        />
+      )
     });
   }
 
@@ -73,7 +79,10 @@ class TabContentContainer extends Component {
       return (
         <div className="tab-content-container">
           <div className="today-block">
-            <DayContainer today="true" data={this.state.forecastData.current} />
+            <DayContainer
+              type="today"
+              data={this.state.forecastData.current}
+            />
           </div>
           <div className="further-days-block">
             {this.renderFurtherDays()}

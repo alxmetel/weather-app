@@ -11,11 +11,13 @@ const TabItem = props => {
   }
 
   return (
-    <div
-      className={`tab-item ${tabIsActive ? "active" : ""}`}
-      onClick={handleTabClick}
-    >
-      {displayName}
+    <div className="tab-item-wrapper">
+      <div
+        className={`tab-item ${tabIsActive ? "active" : ""}`}
+        onClick={handleTabClick}
+      >
+        {displayName}
+      </div>
     </div>
   )
 }

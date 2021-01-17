@@ -1,6 +1,23 @@
-.tab-item {
-  cursor: pointer;
-  &.active {
-    color: blue;
+@import '../../../stylesheets/variables';
+
+.tab-item-wrapper {
+  flex: 1;
+  text-align: center;
+  &:first-child {
+    text-align: end;
+  }
+  &:last-child {
+    text-align: start;
+  }
+  
+  .tab-item {
+    font-size: 50px;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+    &.active {
+      font-weight: 700;
+      color: @font-color-blue;
+    }
   }
 }
