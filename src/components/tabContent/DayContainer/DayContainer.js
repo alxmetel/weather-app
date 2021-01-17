@@ -36,8 +36,12 @@ const DayContainer = props => {
       return (
         <div className='day-container further-day'>
           <h2 className="day">{dataToDisplay.day}</h2>
-          <img className="icon" src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
-          <div className="temperature">{dataToDisplay.temperature}&#176;</div>
+          <div className="icon-block">
+            <img className="icon" src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
+          </div>
+          <div className="temperature-block">
+            <div className="temperature">{dataToDisplay.temperature}&#176;</div>
+          </div>
         </div>
       )
     } else {

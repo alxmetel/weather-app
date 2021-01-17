@@ -15,16 +15,9 @@ class TabContentContainer extends Component {
     dataIsReady: false
   }
 
-  setDataIsReady = val => {
-    this.setState({
-      dataIsReady: val
-    });
-  }
-
   componentDidMount() {
     this.getData();
   }
-
 
   componentDidUpdate(prevProps) {
     if (prevProps.activeTab !== this.props.activeTab) {
@@ -33,15 +26,14 @@ class TabContentContainer extends Component {
     }
   }
 
-  getData = () => {
-    appData.cities.forEach(elem => {
-      if (elem.id === this.props.activeTab) {
-        this.fetchForecastData(elem);
-      }
+
+  setDataIsReady = val => {
+    this.setState({
+      dataIsReady: val
     });
   }
 
-  fetchForecastData = cityData => {
+  fetchWeatherData = cityData => {
     const cityLatitude = cityData.coordinates.latitude;
     const cityLongitude = cityData.coordinates.longitude;
     const dataToExclude = "minutely,hourly,alerts";
@@ -60,6 +52,14 @@ class TabContentContainer extends Component {
       .catch(error => {
         console.log("Forecast data fetch error: ", error)
       })
+  }
+
+  getData = () => {
+    appData.cities.forEach(elem => {
+      if (elem.id === this.props.activeTab) {
+        this.fetchWeatherData(elem);
+      }
+    });
   }
 
   renderFurtherDays = () => {

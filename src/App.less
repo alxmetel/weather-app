@@ -1,6 +1,11 @@
 @import './stylesheets/global';
+@import './stylesheets/media';
 
 .App {
   display: flex;
   justify-content: center;
+  padding: 0 40px;
+  @media @sm, @xs {
+    padding: 0 20px;
+  }
 }

@@ -1,6 +1,17 @@
+@import '../../../stylesheets/media';
+
 .tab-bar-container {
   height: 190px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media @sm {
+    height: 150px;
+  }
+  @media @xs {
+    height: 120px;
+    overflow: auto;
+    white-space: nowrap;
+    justify-content: start;
+  }
 }

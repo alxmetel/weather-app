@@ -1,20 +1,30 @@
 @import '../../../stylesheets/variables';
+@import '../../../stylesheets/media';
 
 .tab-item-wrapper {
   flex: 1;
   text-align: center;
+  @media @xs {
+    margin-right: 30px;
+  }
   &:first-child {
     text-align: end;
   }
   &:last-child {
     text-align: start;
   }
-  
+
   .tab-item {
     font-size: 50px;
     font-weight: 300;
     text-transform: uppercase;
     cursor: pointer;
+    @media @md {
+      font-size: 36px;
+    }
+    @media @sm, @xs {
+      font-size: 30px;
+    }
     &.active {
       font-weight: 700;
       color: @font-color-blue;

@@ -1,4 +1,5 @@
 @import '../../../stylesheets/variables';
+@import '../../../stylesheets/media';
 
 .tab-content-container {
   background: #fff;
@@ -18,16 +19,32 @@
   .further-days-block {
     display: flex;
     justify-content: space-between;
+    @media @sm, @xs {
+      flex-direction: column;
+    }
     .day-container {
       width: 25%;
+      @media @sm, @xs {
+        width: 100%;
+      }
       &:not(:last-child) {
         margin-right: @widget-blocks-gap;
+        @media @sm, @xs {
+          margin-right: 0;
+          margin-bottom: @widget-blocks-gap;
+        }
       }
       &:first-child {
         border-radius: 0 0 0 @widget-blocks-radius;
+        @media @sm, @xs {
+          border-radius: 0;
+        }
       }
       &:last-child {
         border-radius: 0 0 @widget-blocks-radius 0;
+        @media @sm, @xs {
+          border-radius: 0 0 @widget-blocks-radius @widget-blocks-radius;
+        }
       }
     }
   }

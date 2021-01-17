@@ -1,5 +1,13 @@
+@import '../../stylesheets/media';
+
 .widget-container {
   position: relative;
   width: 1280px;
   margin-bottom: 80px;
+  @media @md, @sm, @xs {
+    width: 100%;
+  }
+  @media @sm, @xs {
+    margin-bottom: 40px;
+  }
 }
