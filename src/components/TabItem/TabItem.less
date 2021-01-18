@@ -15,15 +15,20 @@
   }
 
   .tab-item {
+    display: inline-block;
     font-size: 50px;
     font-weight: 300;
     text-transform: uppercase;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     @media @md {
       font-size: 36px;
     }
-    @media @sm, @xs {
+    @media @sm {
       font-size: 30px;
+    }
+    @media @xs {
+      font-size: 26px;
     }
     &.active {
       font-weight: 700;

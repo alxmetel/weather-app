@@ -1,9 +1,9 @@
 import React from 'react';
-import './Day.less';
+import './ForecastItem.less';
 import { getIcon } from '../../utilities/iconIdentifier';
 import { formatDate } from '../../utilities/utilityFunctions';
 
-const Day = props => {
+const ForecastItem = props => {
   const { type, data } = props;
 
   const isToday = type === 'today';
@@ -19,7 +19,7 @@ const Day = props => {
   const renderDayBlock = () => {
     if (type === "today") {
       return (
-        <div className='day-container today'>
+        <div className='forecast-item-container today'>
           <h2 className="day">{dataToDisplay.day}</h2>
           <div className="wrapper">
             <div className="icon-block">
@@ -34,7 +34,7 @@ const Day = props => {
       )
     } else if (type === "furtherDay") {
       return (
-        <div className='day-container further-day'>
+        <div className='forecast-item-container further-day'>
           <h2 className="day">{dataToDisplay.day}</h2>
           <div className="icon-block">
             <img className="icon" src={getIcon(dataToDisplay.iconId)} alt={dataToDisplay.generalDescription} />
@@ -52,4 +52,4 @@ const Day = props => {
   return renderDayBlock();
 }
 
-export default Day;
+export default ForecastItem;

@@ -1,13 +1,16 @@
 @import '../../stylesheets/media';
 
-.widget-container {
+.main-container {
   position: relative;
   width: 1280px;
   margin-bottom: 80px;
   @media @md, @sm, @xs {
     width: 100%;
   }
-  @media @sm, @xs {
+  @media @sm {
     margin-bottom: 40px;
+  }
+  @media @xs {
+    margin-bottom: 30px;
   }
 }

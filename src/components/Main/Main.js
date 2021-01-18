@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Main.less';
 import TabBar from '../TabBar/TabBar';
-import TabContent from '../TabContent/TabContent';
+import Forecast from '../Forecast/Forecast';
 
 class Main extends Component {
   state = {
@@ -16,12 +16,12 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="widget-container">
+      <div className="main-container">
         <TabBar
           activeTab={this.state.activeTab}
           setActiveTab={this.setActiveTab}
         />
-        <TabContent activeTab={this.state.activeTab} />
+        <Forecast activeTab={this.state.activeTab} />
       </div>
     )
   }

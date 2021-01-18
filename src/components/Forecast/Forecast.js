@@ -1,14 +1,14 @@
 // Alternatively this component could be written as functional using hooks
 
 import React, { Component } from 'react';
-import './TabContent.less';
+import './Forecast.less';
 import appData from '../../appData.json';
 import Loader from '../Loader/Loader';
-import Day from '../Day/Day';
+import ForecastItem from '../ForecastItem/ForecastItem';
 
 const numOfFurtherDays = 4;
 
-class TabContent extends Component {
+class Forecast extends Component {
 
   state = {
     forecastData: null,
@@ -61,7 +61,7 @@ class TabContent extends Component {
   renderFurtherDays = () => {
     return [...Array(numOfFurtherDays)].map((e, i) => {
       return (
-        <Day
+        <ForecastItem
           type="furtherDay"
           data={this.state.forecastData.daily[i + 1]}
           key={i}
@@ -73,9 +73,9 @@ class TabContent extends Component {
   renderContent = () => {
     if (this.state.dataIsReady) {
       return (
-        <div className="tab-content-container">
+        <div className="forecast-container">
           <div className="today-block">
-            <Day
+            <ForecastItem
               type="today"
               data={this.state.forecastData.current}
             />
@@ -95,4 +95,4 @@ class TabContent extends Component {
   }
 }
 
-export default TabContent;
+export default Forecast;

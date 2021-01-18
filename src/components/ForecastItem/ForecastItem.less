@@ -1,7 +1,7 @@
 @import '../../stylesheets/variables';
 @import '../../stylesheets/media';
 
-.day-container {
+.forecast-item-container {
   background: @background-color;
   display: flex;
   .day {
@@ -46,16 +46,15 @@
     }
     .wrapper {
       display: flex;
+      width: 100%;
       .icon-block {
-        padding-left: 108px;
-        margin-right: 42px;
-        @media @sm {
-          padding-left: 50px;
-          margin-right: 42px;
+        text-align: end;
+        width: 50%;
+        @media @md {
+          padding-right: 36px;
         }
-        @media @xs {
-          padding-left: 0;
-          margin-right: 26px;
+        @media @sm, @xs {
+          padding-right: 24px;
         }
         .icon {
           width: 232px;
@@ -75,6 +74,11 @@
         }
       }
       .text-block {
+        flex: 1;
+        padding-left: 42px;
+        @media @md, @sm, @xs {
+          padding-left: 0;
+        }
         .temperature {
           font-size: 150px;
           line-height: 1.15;
@@ -133,6 +137,8 @@
     }
     @media @sm, @xs {
       flex-direction: row;
+    }
+    @media @sm {
       padding: 30px 60px;
     }
     @media @xs {
@@ -183,7 +189,7 @@
     .temperature-block {
       @media @sm, @xs {
         flex: 1;
-        text-align: center;
+        text-align: end;
       }
       .temperature {
         font-size: 64px;

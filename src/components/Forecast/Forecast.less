@@ -1,7 +1,7 @@
 @import '../../stylesheets/variables';
 @import '../../stylesheets/media';
 
-.tab-content-container {
+.forecast-container {
   background: #fff;
   border: @widget-blocks-gap solid #fff;
   border-radius: 20px;
@@ -10,7 +10,7 @@
   // Today Block
   .today-block {
     margin-bottom: @widget-blocks-gap;
-    .day-container {
+    .forecast-item-container {
       border-radius: @widget-blocks-radius @widget-blocks-radius 0 0;
     }
   }
@@ -22,7 +22,7 @@
     @media @sm, @xs {
       flex-direction: column;
     }
-    .day-container {
+    .forecast-item-container {
       width: 25%;
       @media @sm, @xs {
         width: 100%;
